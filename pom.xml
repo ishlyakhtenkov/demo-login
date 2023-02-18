@@ -27,6 +27,7 @@
 		<module>report-module</module>
 		<module>common-module</module>
 		<module>common-test</module>
+		<module>application</module>
 	</modules>
 
 </project>

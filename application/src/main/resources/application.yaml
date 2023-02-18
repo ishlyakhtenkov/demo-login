@@ -1,0 +1,10 @@
+spring:
+  config:
+    import:
+      - admin-module.yaml
+      - login-module.yaml
+      - bugtracking-module.yaml
+      - common-module.yaml
+      - login-module.yaml
+      - profile-module.yaml
+      - report-module.yaml
