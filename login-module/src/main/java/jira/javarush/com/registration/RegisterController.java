@@ -24,16 +24,16 @@ public class RegisterController {
 
     @GetMapping
     public String register(Model model) {
-        model.addAttribute("userTo", new UserTo());
+        model.addAttribute("registerTo", new RegisterTo());
         return "register";
     }
 
     @PostMapping
-    public String saveRegister(@Valid UserTo userTo, BindingResult result, SessionStatus status, Model model) {
+    public String saveRegister(@Valid RegisterTo registerTo, BindingResult result, SessionStatus status, Model model) {
         if (result.hasErrors()) {
             return "register";
         }
-        service.create(new User(null, userTo.getName(), userTo.getEmail(), "{noop}" + userTo.getPassword(), true, Set.of(Role.USER)));
+        service.create(new User(null, registerTo.getName(), registerTo.getEmail(), "{noop}" + registerTo.getPassword(), true, Set.of(Role.USER)));
         status.setComplete();
         return "redirect:/login";
     }

@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class UserTo {
+public class RegisterTo {
 
     @NotBlank
     @Size(min = 2, max = 128)
