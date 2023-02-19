@@ -22,4 +22,11 @@ public class UserServiceStub {
         return Optional.ofNullable(userStorage.get(email));
     }
 
+    public User create(User user) {
+        if (getByEmail(user.getEmail()).isPresent()) {
+            throw new RuntimeException("User with this email already exists");
+        }
+        userStorage.put(user.getEmail(), user);
+        return user;
+    }
 }

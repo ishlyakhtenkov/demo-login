@@ -26,6 +26,7 @@ public class SecurityConfiguration {
     public SecurityFilterChain loginFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests()
+                .requestMatchers("/register").anonymous()
                 .anyRequest().authenticated()
                 .and().cors()
                 .and().formLogin(withDefaults())
