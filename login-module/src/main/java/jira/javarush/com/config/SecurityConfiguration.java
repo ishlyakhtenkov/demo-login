@@ -29,8 +29,10 @@ public class SecurityConfiguration {
                 .requestMatchers("/register").anonymous()
                 .anyRequest().authenticated()
                 .and().cors()
-                .and().formLogin(withDefaults())
-                .oauth2Login()
+                .and().formLogin()
+                .loginPage("/login").permitAll()
+                .and().oauth2Login()
+                .loginPage("/login")
                 .userInfoEndpoint()
                 .userService(customOAuth2UserService);
         return http.build();
